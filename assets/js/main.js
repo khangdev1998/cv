@@ -233,3 +233,8 @@ tabItem.forEach(function (item, index) {
     line.style.width = this.offsetWidth + 'px'
   })
 })
+
+// Download cv
+function load() {
+  alert('Đang làm ....')
+}
