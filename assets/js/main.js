@@ -201,12 +201,18 @@ popupImage.addEventListener('click', handlePopupImage)
 function handlePopupImage() {
   overlay.style.display = 'flex'
 }
-
-window.addEventListener('click', function (e) {
-  if (!popupImage.contains(e.target) && !e.target.matches('.overlay-image')) {
-    overlay.style.display = 'none'
-  }
+overlayImage.addEventListener('click', function (event) {
+  event.stopPropagation();
 })
+overlay.onclick = function () {
+  this.style.display = null
+}
+
+// window.addEventListener('click', function (e) {
+//   if (!popupImage.contains(e.target) && !e.target.matches('.overlay-image')) {
+//     overlay.style.display = 'none'
+//   }
+// })
 // Tab item live move
 const $ = document.querySelector.bind(document)
 const $$ = document.querySelectorAll.bind(document)
